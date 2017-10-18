@@ -23,8 +23,8 @@ public class MainView extends JFrame {
         setVisible(true);
     }
 
-    public void createGameView(GameView gameView){
-
+    public void displayGameView(GameView gameView){
+        setContentPane(gameView);
     }
 
     private void createMenu() {
@@ -44,8 +44,20 @@ public class MainView extends JFrame {
         newGame.add(pVpGame);
 
         JMenuItem pvAiGameEasy = new JMenuItem("Player vs AI Easy");
+        pvAiGameEasy.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.startPvAiEasyGame();
+            }
+        });
         newGame.add(pvAiGameEasy);
         JMenuItem pvAiGameMedium = new JMenuItem("Player vs AI Medium");
+        pvAiGameMedium.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.startPvAiMediumGame();
+            }
+        });
         newGame.add(pvAiGameMedium);
         file.add(newGame);
         JMenuItem save = new JMenuItem("Save");
