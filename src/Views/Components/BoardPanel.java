@@ -28,6 +28,8 @@ public class BoardPanel extends JPanel {
     public CellButton getCell(int row, int col) {
         return cellButtons[row][col];
     }
+    public void putWhiteCell(int row, int col) { cellButtons[row][col].setWhite(); }
+    public void putBlackCell(int row, int col) { cellButtons[row][col].setBlack(); }
 
     public void setCellActionListener(ActionListener listener) {
         for (Component cell : getComponents()) {

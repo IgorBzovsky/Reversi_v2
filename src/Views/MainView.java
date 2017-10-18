@@ -19,6 +19,9 @@ public class MainView extends JFrame {
         setSize(FRAME_WIDTH, FRAME_HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        Icon warnIcon = new ImageIcon(this.getClass().getResource("/icons/whitepiece.png"));
+        JButton button2 = new JButton(warnIcon);
+        add(button2);
         createMenu();
         setVisible(true);
     }

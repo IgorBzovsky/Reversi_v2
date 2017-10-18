@@ -15,15 +15,18 @@ public class GameController {
     public void startPvPGame() {
         game = ReversiGame.createPvPGame();
         mainView.displayGameView(new GameView(this, game));
+        game.start();
     }
 
     public void startPvAiEasyGame() {
         game = ReversiGame.createPvAiEasyGame();
         mainView.displayGameView(new GameView(this, game));
+        game.start();
     }
 
     public void startPvAiMediumGame() {
         game = ReversiGame.createPvAiMediumGame();
         mainView.displayGameView(new GameView(this, game));
+        game.start();
     }
 }

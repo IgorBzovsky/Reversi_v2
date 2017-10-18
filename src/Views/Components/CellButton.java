@@ -37,6 +37,7 @@ public class CellButton extends JButton {
         this.row = row;
         this.col = col;
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        setFocusPainted(false);
         reset();
     }
 
@@ -62,10 +63,12 @@ public class CellButton extends JButton {
 
     public void setWhite() {
         cellButtonType = CellButtonType.White;
+        setIcon(new ImageIcon(this.getClass().getResource("/icons/whitepiece.png")));
     }
 
     public void setBlack() {
         cellButtonType = CellButtonType.Black;
+        setIcon(new ImageIcon(this.getClass().getResource("/icons/blackpiece.png")));
     }
 
     public void setEmpty() { cellButtonType = CellButtonType.Empty; }

@@ -1,6 +1,9 @@
 package Views;
 
 import Controllers.GameController;
+import Model.Cell;
+import Model.CellType;
+import Model.IGameObserver;
 import Model.ReversiGame;
 import Views.Components.BoardPanel;
 import Views.Components.CellButton;
@@ -12,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class GameView extends JPanel {
+public class GameView extends JPanel implements IGameObserver {
     private GameController gameController;
     private ReversiGame reversiGame;
 
@@ -22,16 +25,24 @@ public class GameView extends JPanel {
     public GameView(GameController gameController, ReversiGame reversiGame) {
         this.gameController = gameController;
         this.reversiGame = reversiGame;
-
         setLayout(new BorderLayout());
         setSize(800, 600);
-
         board = new BoardPanel();
         board.setCellActionListener(new CellActionListener(currentCell));
         //board.setCellMouseListener(new CellMouseListener());
-
         add(board, BorderLayout.CENTER);
         setVisible(true);
+        reversiGame.addObserver(this);
+    }
+
+    @Override
+    public void start(Cell[] startPosition) {
+        for (Cell cell : startPosition) {
+            if(cell.getCellType() == CellType.White)
+                board.putWhiteCell(cell.getRow(), cell.getColumn());
+            else if(cell.getCellType() == CellType.Black)
+                board.putBlackCell(cell.getRow(), cell.getColumn());
+        }
     }
 
     class CellActionListener implements ActionListener {
