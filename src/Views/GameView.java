@@ -1,10 +1,7 @@
 package Views;
 
 import Controllers.GameController;
-import Model.Cell;
-import Model.CellType;
-import Model.IGameObserver;
-import Model.ReversiGame;
+import Model.*;
 import Views.Components.BoardPanel;
 import Views.Components.CellButton;
 
@@ -14,8 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.LinkedList;
 
 public class GameView extends JPanel implements IGameObserver {
+
     private GameController gameController;
     private ReversiGame reversiGame;
 
@@ -26,24 +25,38 @@ public class GameView extends JPanel implements IGameObserver {
         this.gameController = gameController;
         this.reversiGame = reversiGame;
         setLayout(new BorderLayout());
-        setSize(800, 600);
-        board = new BoardPanel();
-        board.setCellActionListener(new CellActionListener(currentCell));
-        //board.setCellMouseListener(new CellMouseListener());
-        add(board, BorderLayout.CENTER);
+        setSize(VisualSettings.getWidth(), VisualSettings.getHeight());
+        int rows = reversiGame.getBoardLength();
+        int cols = reversiGame.getBoardHeight();
+        createBoard(rows, cols);
         setVisible(true);
         reversiGame.addObserver(this);
     }
 
+
     @Override
-    public void start(Cell[] startPosition) {
-        for (Cell cell : startPosition) {
-            if(cell.getCellType() == CellType.White)
-                board.putWhiteCell(cell.getRow(), cell.getColumn());
-            else if(cell.getCellType() == CellType.Black)
-                board.putBlackCell(cell.getRow(), cell.getColumn());
-        }
+    public void updateGameBoard() {
+
     }
+
+    public void showDisksToUpturn(LinkedList<CellCoord> disks) {
+        board.highlightBackgroundCells(disks);
+    }
+
+    private void createBoard(int rows, int cols) {
+        board = new BoardPanel(rows, cols);
+        board.setCellActionListener(new CellActionListener(currentCell));
+        board.setCellMouseListener(new CellMouseListener());
+        add(board, BorderLayout.CENTER);
+        for (CellCoord cellCoord : reversiGame.getWhiteDisksStartPosition()) {
+            board.putWhiteCell(cellCoord.getRow(), cellCoord.getColumn());
+        }
+        for (CellCoord cellCoord : reversiGame.getBlackDisksStartPosition()) {
+            board.putBlackCell(cellCoord.getRow(), cellCoord.getColumn());
+        }
+        board.highlightCells(reversiGame.getAvailableMoves());
+    }
+
 
     class CellActionListener implements ActionListener {
         private CellButton currentCell;
@@ -86,17 +99,13 @@ public class GameView extends JPanel implements IGameObserver {
             Object obj = e.getSource();
             if (obj instanceof CellButton) {
                 CellButton cell = (CellButton) obj;
-                cell.highlight();
+                gameController.showDisksToUpturn(cell.getRow(), cell.getCol());
             }
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
-            Object obj = e.getSource();
-            if (obj instanceof CellButton) {
-                CellButton cell = (CellButton) obj;
-                cell.reset();
-            }
+            board.resetBackgroundHighlighting();
         }
     }
 }

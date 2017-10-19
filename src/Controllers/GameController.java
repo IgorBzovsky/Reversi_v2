@@ -1,12 +1,16 @@
 package Controllers;
 
+import Model.CellCoord;
 import Model.ReversiGame;
 import Views.GameView;
 import Views.MainView;
 
+import java.util.LinkedList;
+
 public class GameController {
     private ReversiGame game;
     private MainView mainView;
+    private GameView gameView;
 
     public GameController() {
         mainView = new MainView(this);
@@ -14,19 +18,29 @@ public class GameController {
 
     public void startPvPGame() {
         game = ReversiGame.createPvPGame();
-        mainView.displayGameView(new GameView(this, game));
-        game.start();
+        startGame();
     }
 
     public void startPvAiEasyGame() {
         game = ReversiGame.createPvAiEasyGame();
-        mainView.displayGameView(new GameView(this, game));
-        game.start();
+        startGame();
     }
 
     public void startPvAiMediumGame() {
         game = ReversiGame.createPvAiMediumGame();
-        mainView.displayGameView(new GameView(this, game));
-        game.start();
+        startGame();
+    }
+
+    private void startGame() {
+        gameView = new GameView(this, game);
+        mainView.displayGameView(gameView);
+    }
+
+    public void showDisksToUpturn(int row, int col) {
+        if(game == null)
+            return;
+        LinkedList<CellCoord> cellCoords = game.getDisksToUpturn(row, col);
+        gameView.showDisksToUpturn(cellCoords);
+
     }
 }

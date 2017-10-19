@@ -3,13 +3,21 @@ package Model;
 import java.util.LinkedList;
 
 public abstract class ReversiGame {
-    private GameBoard gameBoard;
+
+    private IGameBoard gameBoard;
     private LinkedList<IGameObserver> observers;
+    private boolean isCurrentPlayerWhite = false;
+    private LinkedList<CellCoord> updatedCells;
+
     public ReversiGame() {
         observers = new LinkedList<IGameObserver>();
         gameBoard = new GameBoard();
+        updatedCells = new LinkedList<CellCoord>();
     }
 
+    /**
+     * Factory methods for creating different types of games
+     */
     public static PvPReversiGame createPvPGame(){
         return new PvPReversiGame();
     }
@@ -20,9 +28,29 @@ public abstract class ReversiGame {
         return new PvAiReversiGame(new AiMediumStrategy());
     }
 
-    public void start() {
+    /**
+     * API to get board parameters and game information
+     */
+    public int getBoardLength() { return gameBoard.getRows(); }
+    public int getBoardHeight() { return gameBoard.getCols(); }
+    public CellCoord[] getWhiteDisksStartPosition() { return gameBoard.getWhiteStartPosition(); }
+    public CellCoord[] getBlackDisksStartPosition() { return gameBoard.getBlackStartPosition(); }
+    public LinkedList<CellCoord> getAvailableMoves() { return gameBoard.getAvailableMoves(isCurrentPlayerWhite); }
+    public LinkedList<CellCoord> getDisksToUpturn(int row, int col) {
+        return gameBoard.getDiscsToUpturn(row, col, isCurrentPlayerWhite);
+    }
+    public LinkedList<CellCoord> getUpdatedCells() { return updatedCells; }
+    public boolean getIsCurrentPlayerWhite() { return isCurrentPlayerWhite; }
+
+    /**
+     * Game business logic
+     */
+    public void move(int row, int col) {
+        if(!gameBoard.isValidMove(row, col, isCurrentPlayerWhite))
+            return;
+        updatedCells = gameBoard.putDisk(row, col, isCurrentPlayerWhite);
         for (IGameObserver observer : observers) {
-            observer.start(gameBoard.getStartPosition());
+            observer.updateGameBoard();
         }
     }
 

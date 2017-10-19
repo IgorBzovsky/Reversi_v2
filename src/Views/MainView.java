@@ -8,21 +8,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainView extends JFrame {
-    private static final int FRAME_WIDTH  = 800;
-    private static final int FRAME_HEIGHT  = 600;
 
     private GameController gameController;
 
     public MainView(GameController gameController) throws HeadlessException {
         this.gameController = gameController;
         setTitle("Reversi v2");
-        setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        setSize(VisualSettings.getWidth(), VisualSettings.getHeight());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        Icon warnIcon = new ImageIcon(this.getClass().getResource("/icons/whitepiece.png"));
-        JButton button2 = new JButton(warnIcon);
-        add(button2);
         createMenu();
+        setContentPane(new SplashScreen());
         setVisible(true);
     }
 
