@@ -66,6 +66,8 @@ public class GameBoard implements IGameBoard {
         CellType playerDiscType = isWhitePlayer ? CellType.White : CellType.Black;
         CellType opponentDiscType = isWhitePlayer ? CellType.Black : CellType.White;
         LinkedList<CellCoord> discsToUpturn = new LinkedList<>();
+        if(cells[row][column].getCellType() != CellType.Empty)
+            return discsToUpturn;
         for (CellCoord direction: DIRECTIONS) {
             LinkedList<CellCoord> discsToUpturnInDirection = new LinkedList<>();
             int deltaRow = direction.getRow();
@@ -95,6 +97,8 @@ public class GameBoard implements IGameBoard {
 
     @Override
     public boolean isValidMove(int row, int column, boolean isWhitePlayer) {
+        if(cells[row][column].getCellType() != CellType.Empty)
+            return false;
         CellType playerDiscType = isWhitePlayer ? CellType.White : CellType.Black;
         CellType opponentDiscType = isWhitePlayer ? CellType.Black : CellType.White;
         for (CellCoord direction: DIRECTIONS) {
@@ -125,6 +129,19 @@ public class GameBoard implements IGameBoard {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 if(isValidMove(i, j, isWhitePlayer))
+                    cellCoords.add(new CellCoord(i, j));
+            }
+        }
+        return cellCoords;
+    }
+
+    @Override
+    public LinkedList<CellCoord> getDiscs(boolean isWhitePlayer) {
+        CellType discType = isWhitePlayer ? CellType.White : CellType.Black;
+        LinkedList<CellCoord> cellCoords = new LinkedList<CellCoord>();
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                if(cells[i][j].getCellType() == discType)
                     cellCoords.add(new CellCoord(i, j));
             }
         }

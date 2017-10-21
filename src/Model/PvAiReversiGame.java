@@ -5,4 +5,9 @@ public class PvAiReversiGame extends ReversiGame {
     public PvAiReversiGame(AiStrategy strategy) {
         this.strategy = strategy;
     }
+
+    @Override
+    public void move(int row, int col) {
+
+    }
 }

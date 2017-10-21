@@ -33,6 +33,7 @@ public class GameController {
 
     private void startGame() {
         gameView = new GameView(this, game);
+        mainView.createGameView(gameView);
         mainView.displayGameView(gameView);
     }
 
@@ -42,5 +43,10 @@ public class GameController {
         LinkedList<CellCoord> cellCoords = game.getDisksToUpturn(row, col);
         gameView.showDisksToUpturn(cellCoords);
 
+    }
+
+    public void move(int row, int col) {
+        if(game != null)
+            game.move(row, col);
     }
 }

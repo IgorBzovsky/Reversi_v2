@@ -7,7 +7,7 @@ public class VisualSettings {
     /**
      * Window settings
      */
-    private static final int WIDTH = 800;
+    private static final int WIDTH = 900;
     private static final int HEIGHT = 700;
 
     /**
@@ -36,6 +36,9 @@ public class VisualSettings {
     private static final Color LABEL_BACKCOLOR = new Color(57, 96, 96);
     private static final Color LABEL_FORECOLOR = Color.WHITE;
     private static final Color LABEL_BORDERCOLOR = Color.LIGHT_GRAY;
+
+    private static final String SPLASHSCREEN = "Splashscreen";
+    private static final String GAMESCREEN = "Gamescreen";
 
     public static int getWidth() {
         return WIDTH;
@@ -107,5 +110,13 @@ public class VisualSettings {
 
     public static Color getLabelForecolor() {
         return LABEL_FORECOLOR;
+    }
+
+    public static String getSplashscreen() {
+        return SPLASHSCREEN;
+    }
+
+    public static String getGamescreen() {
+        return GAMESCREEN;
     }
 }

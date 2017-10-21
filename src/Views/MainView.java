@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class MainView extends JFrame {
 
     private GameController gameController;
+    private JPanel screens = null;
 
     public MainView(GameController gameController) throws HeadlessException {
         this.gameController = gameController;
@@ -18,12 +19,37 @@ public class MainView extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         createMenu();
-        setContentPane(new SplashScreen());
+        screens = new JPanel(new CardLayout());
+        screens.add(new SplashScreen(), VisualSettings.getSplashscreen());
+        add(screens);
+        displaySplashScreen();
         setVisible(true);
     }
 
+    public void createGameView(GameView gameView) {
+        if(gameView != null) {
+            screens.add(gameView, VisualSettings.getGamescreen());
+        }
+    }
+
     public void displayGameView(GameView gameView){
-        setContentPane(gameView);
+        try{
+            CardLayout cl = (CardLayout)(screens.getLayout());
+            cl.show(screens, VisualSettings.getGamescreen());
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void displaySplashScreen() {
+        try {
+            CardLayout cl = (CardLayout)(screens.getLayout());
+            cl.show(screens, VisualSettings.getSplashscreen());
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private void createMenu() {

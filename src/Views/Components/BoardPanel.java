@@ -27,8 +27,14 @@ public class BoardPanel extends JPanel {
     public CellButton getCell(int row, int col) {
         return cellButtons[row][col];
     }
-    public void putWhiteCell(int row, int col) { cellButtons[row][col].setWhite(); }
-    public void putBlackCell(int row, int col) { cellButtons[row][col].setBlack(); }
+    public void putWhiteDisk(int row, int col) { cellButtons[row][col].setWhite(); }
+    public void putBlackDisk(int row, int col) { cellButtons[row][col].setBlack(); }
+    public void putDisk(int row, int col, boolean isWhitePlayer) {
+        if(isWhitePlayer)
+            putWhiteDisk(row, col);
+        else
+            putBlackDisk(row, col);
+    }
     public void highlightCell(int row, int col) { cellButtons[row][col].highlight(); }
     public void highlightCells(LinkedList<CellCoord> cellCoords){
         for (CellCoord cellCoord : cellCoords) {

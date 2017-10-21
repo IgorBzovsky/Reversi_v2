@@ -11,6 +11,8 @@ public interface IGameBoard {
 
     LinkedList<CellCoord> getAvailableMoves(boolean isWhitePlayer);
 
+    LinkedList<CellCoord> getDiscs(boolean isWhitePlayer);
+
     int getRows();
 
     int getCols();
