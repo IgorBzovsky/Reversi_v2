@@ -2,9 +2,10 @@ package Model;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class GameBoard implements IGameBoard {
+public class GameBoard implements Serializable {
     private static final int ROWS = 8;
     private static final int COLS = 8;
     private static final CellCoord[] START_WHITE_POSITION = {
@@ -40,11 +41,18 @@ public class GameBoard implements IGameBoard {
         }
         setStartPosition();
     }
+    public GameBoard(GameBoard another) {
+        cells = new Cell[ROWS][COLS];
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                cells[i][j] = new Cell(another.cells[i][j]);
+            }
+        }
+    }
 
     /**
      * Business logic API
      */
-    @Override
     //Returns list of newly changed cells
     public LinkedList<CellCoord> putDisk(int row, int column, boolean isWhite) {
         LinkedList<CellCoord> discsToUpturn = getDiscsToUpturn(row, column, isWhite);
@@ -61,7 +69,6 @@ public class GameBoard implements IGameBoard {
         return discsToUpturn;
     }
 
-    @Override
     public LinkedList<CellCoord> getDiscsToUpturn(int row, int column, boolean isWhitePlayer) {
         CellType playerDiscType = isWhitePlayer ? CellType.White : CellType.Black;
         CellType opponentDiscType = isWhitePlayer ? CellType.Black : CellType.White;
@@ -95,7 +102,6 @@ public class GameBoard implements IGameBoard {
         return discsToUpturn;
     }
 
-    @Override
     public boolean isValidMove(int row, int column, boolean isWhitePlayer) {
         if(cells[row][column].getCellType() != CellType.Empty)
             return false;
@@ -123,7 +129,6 @@ public class GameBoard implements IGameBoard {
         return false;
     }
 
-    @Override
     public LinkedList<CellCoord> getAvailableMoves(boolean isWhitePlayer){
         LinkedList<CellCoord> cellCoords = new LinkedList<>();
         for (int i = 0; i < ROWS; i++) {
@@ -135,7 +140,6 @@ public class GameBoard implements IGameBoard {
         return cellCoords;
     }
 
-    @Override
     public LinkedList<CellCoord> getDiscs(boolean isWhitePlayer) {
         CellType discType = isWhitePlayer ? CellType.White : CellType.Black;
         LinkedList<CellCoord> cellCoords = new LinkedList<CellCoord>();
@@ -151,13 +155,9 @@ public class GameBoard implements IGameBoard {
     /**
      * Board parameters API
      */
-    @Override
     public int getRows(){ return ROWS; }
-    @Override
     public int getCols(){ return COLS; }
-    @Override
     public CellCoord[] getWhiteStartPosition() { return START_WHITE_POSITION; }
-    @Override
     public CellCoord[] getBlackStartPosition() { return START_BLACK_POSITION; }
 
     /**

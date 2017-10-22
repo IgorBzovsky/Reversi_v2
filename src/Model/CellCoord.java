@@ -1,6 +1,8 @@
 package Model;
 
-public class CellCoord {
+import java.io.Serializable;
+
+public class CellCoord implements Serializable {
     private int row;
     private int column;
 

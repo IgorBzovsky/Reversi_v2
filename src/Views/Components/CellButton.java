@@ -13,7 +13,6 @@ public class CellButton extends JButton {
     private CellButtonState cellButtonState = CellButtonState.None;
 
     enum CellButtonState {
-        Selected,
         Highlighted,
         BackgroundHighlighted,
         None
@@ -25,12 +24,6 @@ public class CellButton extends JButton {
         setPreferredSize(new Dimension(VisualSettings.getCellWidth(), VisualSettings.getCellHeight()));
         setFocusPainted(false);
         reset();
-    }
-
-    public void select() {
-        cellButtonState = CellButtonState.Selected;
-        setBackground(VisualSettings.getCellSelectBackcolor());
-        setBorder(BorderFactory.createLineBorder(VisualSettings.getCellSelectBordercolor()));
     }
 
     public void highlight() {
@@ -69,6 +62,10 @@ public class CellButton extends JButton {
 
     public void setBlack() {
         setIcon(new ImageIcon(this.getClass().getResource("/icons/blackpiece.png")));
+    }
+
+    public void setEmpty() {
+        setIcon(null);
     }
 
     public int getRow() {

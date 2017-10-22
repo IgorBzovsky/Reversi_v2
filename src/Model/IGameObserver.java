@@ -1,7 +1,10 @@
 package Model;
 
-public interface IGameObserver {
+import java.io.Serializable;
+
+public interface IGameObserver extends Serializable {
     void updateGameBoard();
     void gameOver();
     void missMove();
+    void start();
 }

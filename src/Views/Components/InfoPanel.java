@@ -5,10 +5,10 @@ import Views.VisualSettings;
 import javax.swing.*;
 import java.awt.*;
 
-public class PlayerPanel extends JPanel {
+public class InfoPanel extends JPanel {
     private JLabel playerLabel;
-    public PlayerPanel() {
-        setPreferredSize(new Dimension(0, VisualSettings.getPlayerPanelHeight()));
+    public InfoPanel() {
+        setPreferredSize(new Dimension(0, VisualSettings.getInfoPanelHeight()));
         playerLabel = new JLabel();
         playerLabel.setFont(VisualSettings.getStandartFont());
         add(playerLabel);

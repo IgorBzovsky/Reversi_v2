@@ -1,6 +1,8 @@
 package Model;
 
-public enum GameResult {
+import java.io.Serializable;
+
+public enum GameResult implements Serializable {
     WhiteWinner,
     BlackWinner,
     Draw,

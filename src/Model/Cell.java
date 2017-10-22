@@ -1,6 +1,8 @@
 package Model;
 
-public class Cell {
+import java.io.Serializable;
+
+public class Cell implements Serializable {
     private CellType cellType;
     private CellCoord cellCoord;
 
@@ -12,6 +14,11 @@ public class Cell {
     public Cell(CellCoord cellCoord, CellType cellType) {
         this(cellCoord);
         this.cellType = cellType;
+    }
+
+    public Cell(Cell another){
+        cellType = another.cellType;
+        cellCoord = another.cellCoord;
     }
 
     public CellType getCellType() {
