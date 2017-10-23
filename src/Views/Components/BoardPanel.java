@@ -76,6 +76,28 @@ public class BoardPanel extends JPanel {
         }
     }
 
+    public void removeCellActionListeners() {
+        for (Component cell : getComponents()) {
+            if(cell instanceof CellButton) {
+                ActionListener[] listeners = ((CellButton)cell).getActionListeners();
+                for (ActionListener listener : listeners) {
+                    ((CellButton)cell).removeActionListener(listener);
+                }
+            }
+        }
+    }
+
+    public void removeCellMouseListeners() {
+        for (Component cell : getComponents()) {
+            if(cell instanceof CellButton) {
+                MouseListener[] listeners = ((CellButton)cell).getMouseListeners();
+                for (MouseListener listener : listeners) {
+                    ((CellButton)cell).removeMouseListener(listener);
+                }
+            }
+        }
+    }
+
     private void createButtons(GridBagConstraints constraints) {
         cellButtons = new CellButton[rows][cols];
         for (int i = 1; i <= rows; i++) {

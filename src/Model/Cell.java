@@ -18,7 +18,7 @@ public class Cell implements Serializable {
 
     public Cell(Cell another){
         cellType = another.cellType;
-        cellCoord = another.cellCoord;
+        cellCoord = new CellCoord(another.cellCoord);
     }
 
     public CellType getCellType() {

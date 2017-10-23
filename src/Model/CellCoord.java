@@ -11,6 +11,11 @@ public class CellCoord implements Serializable {
         this.column = column;
     }
 
+    public CellCoord(CellCoord cellCoord){
+        this.row = cellCoord.getRow();
+        this.column = cellCoord.getColumn();
+    }
+
     public int getRow() {
         return row;
     }

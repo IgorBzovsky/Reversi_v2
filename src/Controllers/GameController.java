@@ -2,6 +2,7 @@ package Controllers;
 
 import Model.CellCoord;
 import Model.ReversiGame;
+import Views.AiGameView;
 import Views.GameView;
 import Views.MainView;
 
@@ -18,32 +19,35 @@ public class GameController implements Serializable {
         mainView = new MainView(this);
     }
 
+    /**
+     * Game initialization
+     */
     public void startPvPGame() {
         game = ReversiGame.createPvPGame();
-        initGame();
+        initPvPGame();
     }
-
     public void startPvAiEasyGame() {
         boolean isPlayerWhite = new Random().nextBoolean();
         game = ReversiGame.createPvAiEasyGame(isPlayerWhite);
-        initGame(isPlayerWhite);
+        initAiGame(isPlayerWhite);
     }
-
     public void startPvAiMediumGame() {
         boolean isPlayerWhite = new Random().nextBoolean();
         game = ReversiGame.createPvAiMediumGame(isPlayerWhite);
-        initGame(isPlayerWhite);
+        initAiGame(isPlayerWhite);
     }
-
-    private void initGame() {
+    private void initPvPGame() {
         gameView = new GameView(this, game);
         mainView.createGameView(gameView);
     }
-
-    private void initGame(boolean isWhitePlayer) {
-        gameView = new GameView(this, game, isWhitePlayer);
+    private void initAiGame(boolean isWhitePlayer) {
+        gameView = new AiGameView(this, game, isWhitePlayer);
         mainView.createGameView(gameView);
     }
+
+    /**
+     * Game board interaction
+     */
     public void start() {
         game.start();
     }
@@ -55,12 +59,14 @@ public class GameController implements Serializable {
         gameView.showDisksToUpturn(cellCoords);
 
     }
-
     public void makeTurn(int row, int col) {
         if(game != null)
             game.makeTurn(row, col);
     }
 
+    /**
+     * Menu interaction
+     */
     public void save() {
         if(gameView == null)
             return;
@@ -75,7 +81,7 @@ public class GameController implements Serializable {
             out.writeObject(game);
             out.close();
             fileOut.close();
-            System.out.printf("Serialized data is saved in /tmp/employee.ser");
+            System.out.printf("Serialized data is saved in /src/save.ser");
         }catch(IOException i) {
             i.printStackTrace();
         }

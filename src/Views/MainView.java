@@ -24,6 +24,7 @@ public class MainView extends JFrame {
         createMenu();
         screens = new JPanel(new CardLayout());
         screens.add(new SplashScreen(), VisualSettings.getSplashscreen());
+        screens.add(new RulesScreen(), VisualSettings.getRulesscreen());
         add(screens);
         displaySplashScreen();
         setVisible(true);
@@ -126,14 +127,32 @@ public class MainView extends JFrame {
         });
         file.add(load);
         JMenuItem exit = new JMenuItem("Exit");
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         file.add(exit);
 
         /*Menu Help*/
         JMenu help = new JMenu("Help");
         JMenuItem rules = new JMenuItem("Rules");
+        rules.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    CardLayout cl = (CardLayout)(screens.getLayout());
+                    cl.show(screens, VisualSettings.getRulesscreen());
+                }
+                catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        });
         help.add(rules);
-        JMenuItem about = new JMenuItem("About");
-        help.add(about);
+        //JMenuItem about = new JMenuItem("About");
+        //help.add(about);
 
         menuBar.add(file);
         menuBar.add(help);

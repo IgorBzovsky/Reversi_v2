@@ -159,6 +159,67 @@ public class GameBoard implements Serializable {
     public int getCols(){ return COLS; }
     public CellCoord[] getWhiteStartPosition() { return START_WHITE_POSITION; }
     public CellCoord[] getBlackStartPosition() { return START_BLACK_POSITION; }
+    public int getCornerDisksCount(boolean isWhite) {
+        CellType discType = isWhite ? CellType.White : CellType.Black;
+        int counter = 0;
+        if(cells[0][0].getCellType() == discType)
+            counter++;
+        if(cells[ROWS - 1][COLS - 1].getCellType() == discType)
+            counter++;
+        if(cells[0][COLS - 1].getCellType() == discType)
+            counter++;
+        if(cells[ROWS - 1][0].getCellType() == discType)
+            counter++;
+        return counter;
+    }
+    public int getCornerAdjacentDisksCount(boolean isWhite) {
+        CellType discType = isWhite ? CellType.White : CellType.Black;
+        int counter = 0;
+        CellCoord cornerAdjacentCells[] = {
+                new CellCoord(0, 1),
+                new CellCoord(1, 0),
+                new CellCoord(1, 1),
+                new CellCoord(0, COLS - 2),
+                new CellCoord(1, COLS - 1),
+                new CellCoord(1, COLS - 2),
+                new CellCoord(ROWS - 1, 1),
+                new CellCoord(ROWS - 2, 0),
+                new CellCoord(ROWS - 2, 1),
+                new CellCoord(ROWS - 1, COLS - 2),
+                new CellCoord(ROWS - 2, COLS - 2),
+                new CellCoord(ROWS - 2, COLS - 1)
+        };
+        for (CellCoord cell : cornerAdjacentCells) {
+            if(cells[cell.getRow()][cell.getColumn()].getCellType() == discType)
+                counter++;
+        }
+        return counter;
+    }
+    public int getFrontierDisksCount(boolean isWhite) {
+        int counter = 0;
+        CellType discType = isWhite ? CellType.White : CellType.Black;
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                if(cells[i][j].getCellType() == discType && isFrontier(new CellCoord(i, j)))
+                    counter++;
+            }
+        }
+        return counter;
+    }
+    public CellType getCellType(int row, int col) {
+        return cells[row][col].getCellType();
+    }
+    private boolean isFrontier(CellCoord cellCoord) {
+        for (CellCoord direction: DIRECTIONS){
+            int currentRow = cellCoord.getRow() + direction.getRow();
+            int currentColumn = cellCoord.getColumn() + direction.getColumn();
+            if(currentRow >= 0 && currentRow < ROWS && currentColumn >= 0 && currentColumn < COLS){
+                if(cells[currentRow][currentColumn].getCellType() == CellType.Empty)
+                    return true;
+            }
+        }
+        return false;
+    }
 
     /**
      * Set initial disks position
@@ -179,4 +240,5 @@ public class GameBoard implements Serializable {
     private void setCellType(int row, int column, CellType cellType){
         cells[row][column].setType(cellType);
     }
+
 }

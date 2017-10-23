@@ -12,20 +12,23 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.Serializable;
 import java.util.LinkedList;
+import javax.swing.Timer;
 
 public class GameView extends JPanel implements IGameObserver {
 
     private GameController gameController;
-    private ReversiGame reversiGame;
-
-    private BoardPanel board = null;
-    private JPanel gameBoardContainer = null;
-    private CellButton currentCell = null;
     private PlayerPanel playerPanel = null;
-    private InfoPanel infoPanel = null;
     private StatisticsTable statisticsTable = null;
-    private boolean isCurrentPlayerWhite = false;
+    private boolean isBoardActive = true;
 
+    ReversiGame reversiGame;
+    BoardPanel board = null;
+    InfoPanel infoPanel = null;
+    boolean isCurrentPlayerWhite = false;
+
+    /**
+     * PvP game constructor
+     */
     public GameView(GameController gameController, ReversiGame reversiGame) {
         this.gameController = gameController;
         this.reversiGame = reversiGame;
@@ -40,44 +43,33 @@ public class GameView extends JPanel implements IGameObserver {
     }
 
     /**
-     * AI Game constructor
+     * UI logic
      */
-    public GameView(GameController gameController, ReversiGame reversiGame, boolean isWhitePlayer) {
-        this(gameController, reversiGame);
-        if(isWhitePlayer)
-            infoPanel.setMessage("You are playing White");
-        else
-            infoPanel.setMessage("You are playing Black");
-    }
-
     @Override
-    /**
-     * Activate cell buttons
-     */
     public void start() {
-        board.setCellActionListener(new CellActionListener(currentCell));
+        board.setCellActionListener(new CellActionListener());
         board.setCellMouseListener(new CellMouseListener());
     }
-
     @Override
     public void updateGameBoard() {
-        /**
-         * Current player updates
-         */
         LinkedList<CellCoord> updatedCells = reversiGame.getUpdatedCells();
         for (CellCoord cell : updatedCells) {
             board.putDisk(cell.getRow(), cell.getColumn(), isCurrentPlayerWhite);
         }
         writeStatistics();
-        switchPlayer();
-    }
-    private void switchPlayer() {
-        isCurrentPlayerWhite = reversiGame.getIsCurrentPlayerWhite();
         board.resetBackgroundHighlighting();
         showAvailableMoves(reversiGame.getAvailableMoves());
-        setPlayer(isCurrentPlayerWhite);
+        switchPlayer();
     }
 
+    @Override
+    public void missMove() {
+        updateGameBoard();
+        if(!isCurrentPlayerWhite)
+            playerPanel.setMessage("White missed move! Current move Black!");
+        else
+            playerPanel.setMessage("Black missed move! Current move White!");
+    }
     @Override
     public void gameOver() {
         GameResult gameResult = reversiGame.getGameResult();
@@ -85,22 +77,11 @@ public class GameView extends JPanel implements IGameObserver {
             playerPanel.setMessage("Game Over! White wins!!!");
         else if(gameResult == GameResult.BlackWinner)
             playerPanel.setMessage("Game Over! Black wins!!!");
+        deactivateButtons();
     }
-
     public void showDisksToUpturn(LinkedList<CellCoord> disks) {
         board.resetBackgroundHighlighting();
         board.highlightBackgroundCells(disks);
-    }
-
-    public void missMove() {
-        writeStatistics();
-        switchPlayer();
-        /*Previous player missing move*/
-        if(!isCurrentPlayerWhite)
-            playerPanel.setMessage("White missed move! Current move: Black");
-        else
-            playerPanel.setMessage("Black missed move! Current move: White");
-
     }
 
     /**
@@ -137,17 +118,38 @@ public class GameView extends JPanel implements IGameObserver {
         }
     }
 
-    private void showAvailableMoves(LinkedList<CellCoord> cellCoords) {
+    /**
+     * Helper methods
+     */
+    void activateButtons() {
+        isBoardActive = true;
+    }
+    void deactivateButtons() {
+        isBoardActive = false;
+    }
+    void showAvailableMoves(LinkedList<CellCoord> cellCoords) {
         board.resetHighlighting();
         board.highlightCells(cellCoords);
     }
-
-    private void writeStatistics() {
+    void writeStatistics() {
         statisticsTable.addRecord(reversiGame.getBlackDiscsCount(), reversiGame.getWhiteDiscsCount());
     }
+    void setPlayer(boolean isCurrentPlayerWhite) {
+        if(isCurrentPlayerWhite)
+            playerPanel.setMessage("Current move: White");
+        else
+            playerPanel.setMessage("Current move: Black");
+    }
+    void switchPlayer() {
+        isCurrentPlayerWhite = reversiGame.getIsCurrentPlayerWhite();
+        setPlayer(isCurrentPlayerWhite);
+    }
 
+    /**
+     * Creation of components
+     */
     private void createBoard(int rows, int cols) {
-        gameBoardContainer = new JPanel();
+        JPanel gameBoardContainer = new JPanel();
         gameBoardContainer.setLayout(new BoxLayout(gameBoardContainer, BoxLayout.Y_AXIS));
         board = new BoardPanel(rows, cols);
         playerPanel = new PlayerPanel();
@@ -170,25 +172,17 @@ public class GameView extends JPanel implements IGameObserver {
         add(statisticsTable, BorderLayout.EAST);
     }
 
-    private void setPlayer(boolean isCurrentPlayerWhite) {
-        if(isCurrentPlayerWhite)
-            playerPanel.setMessage("Current move: White");
-        else
-            playerPanel.setMessage("Current move: Black");
-    }
-
+    /**
+     * Action and Mouse listeners
+     */
     class CellActionListener implements ActionListener {
-        private CellButton currentCell;
-        CellActionListener(CellButton currentCell) {
-            this.currentCell = currentCell;
-        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            if(!isBoardActive)
+                return;
             Object obj = e.getSource();
             if(obj instanceof CellButton) {
-                if(currentCell != null)
-                    currentCell.reset();
                 CellButton cell = (CellButton) obj;
                 gameController.makeTurn(cell.getRow(), cell.getCol());
             }
@@ -214,6 +208,8 @@ public class GameView extends JPanel implements IGameObserver {
 
         @Override
         public void mouseEntered(MouseEvent e) {
+            if(!isBoardActive)
+                return;
             Object obj = e.getSource();
             if (obj instanceof CellButton) {
                 CellButton cell = (CellButton) obj;

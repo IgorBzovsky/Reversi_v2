@@ -37,6 +37,7 @@ public class VisualSettings {
 
     private static final String SPLASHSCREEN = "Splashscreen";
     private static final String GAMESCREEN = "Gamescreen";
+    private static final String RULESSCREEN = "Rulesscreen";
 
     /**
      * Fonts
@@ -150,4 +151,6 @@ public class VisualSettings {
     public static int getGameViewWidth() { return GAME_VIEW_WIDTH; }
 
     public static int getGameViewHeight() { return GAME_VIEW_HEIGHT; }
+
+    public static String getRulesscreen() { return RULESSCREEN; }
 }

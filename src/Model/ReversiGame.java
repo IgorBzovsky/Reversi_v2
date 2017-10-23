@@ -6,20 +6,18 @@ import Model.Strategy.AiMediumStrategy;
 import java.io.Serializable;
 import java.util.LinkedList;
 
-public abstract class ReversiGame implements IReversiGame, Serializable {
+public abstract class ReversiGame implements Serializable {
 
-    private GameBoard gameBoard;
-    private GameBoard savedGameBoard;
+    protected GameBoard gameBoard;
     protected LinkedList<IGameObserver> observers;
-    protected LinkedList<IGameObserver> savedObservers;
-    private boolean isCurrentPlayerWhite = false;
-    private LinkedList<CellCoord> updatedCells;
+    protected boolean isCurrentPlayerWhite = false;
+    protected LinkedList<CellCoord> updatedCells;
     private LinkedList<CellCoord> statistics;
     private GameResult gameResult = GameResult.NotFinished;
 
     public ReversiGame() {
-        observers = new LinkedList<IGameObserver>();
         gameBoard = new GameBoard();
+        observers = new LinkedList<IGameObserver>();
         updatedCells = new LinkedList<CellCoord>();
         statistics = new LinkedList<CellCoord>();
         writeStatistics();
@@ -58,75 +56,45 @@ public abstract class ReversiGame implements IReversiGame, Serializable {
     }
     public GameResult getGameResult() { return gameResult; }
     boolean isValidMove(int row, int col) { return gameBoard.isValidMove(row, col, isCurrentPlayerWhite); }
-
-    @Override
-    public void setSimulationMode() {
-        if(gameBoard != null){
-            savedGameBoard = gameBoard;
-            gameBoard = new GameBoard(gameBoard);
-        }
-        if(observers != null) {
-            savedObservers = observers;
-            observers = new LinkedList<IGameObserver>();
-        }
+    public GameBoard cloneGameBoard(){
+        return new GameBoard(gameBoard);
     }
-
-    @Override
-    public void setGameMode() {
-        if(savedGameBoard != null){
-            gameBoard = savedGameBoard;
-            savedGameBoard = null;
-        }
-        if(savedObservers != null) {
-            observers = savedObservers;
-            savedObservers = null;
-        }
-    }
-
-    public void addObserver(IGameObserver observer){
-        if(observer != null)
-            observers.add(observer);
-    }
-
     public boolean isGameOver() {
         return gameBoard.getAvailableMoves(isCurrentPlayerWhite).size() == 0
                 && gameBoard.getAvailableMoves(!isCurrentPlayerWhite).size() == 0;
-    }
-
-    @Override
-    public void move(int row, int col) {
-        if(!isValidMove(row, col))
-            return;
-        updatedCells = gameBoard.putDisk(row, col, isCurrentPlayerWhite);
-        writeStatistics();
-        changePlayer();
-        for (IGameObserver observer : observers) {
-            observer.updateGameBoard();
-        }
-        if(isGameOver()) {
-            gameOver();
-            return;
-        }
-        if(isMissMove()) {
-            missMove();
-        }
     }
 
     public LinkedList<CellCoord> getStatistics() {
         return statistics;
     }
 
-    private void writeStatistics() { statistics.add(new CellCoord(getBlackDiscsCount(), getWhiteDiscsCount())); }
-
-    private void changePlayer() {
-        isCurrentPlayerWhite = !isCurrentPlayerWhite;
+    /**
+     * Game logic
+     */
+    public abstract void start();
+    public abstract void makeTurn(int row, int col);
+    public void move(int row, int col) {
+        updatedCells = gameBoard.putDisk(row, col, isCurrentPlayerWhite);
+        writeStatistics();
+        changePlayer();
+        for (IGameObserver observer : observers) {
+            observer.updateGameBoard();
+        }
     }
 
-    private boolean isMissMove() {
+
+    public void addObserver(IGameObserver observer){
+        if(observer != null)
+            observers.add(observer);
+    }
+
+    /**
+     * Helper methods
+     */
+    public boolean isMissMove() {
         return gameBoard.getAvailableMoves(isCurrentPlayerWhite).size() == 0;
     }
-
-    private void gameOver(){
+    void gameOver(){
         int whiteDisks = getWhiteDiscsCount();
         int blackDisks = getBlackDiscsCount();
         if(whiteDisks > blackDisks)
@@ -139,12 +107,14 @@ public abstract class ReversiGame implements IReversiGame, Serializable {
             observer.gameOver();
         }
     }
-
-    private void missMove(){
+    void missMove(){
         writeStatistics();
         changePlayer();
         for (IGameObserver observer : observers) {
             observer.missMove();
         }
     }
+    private void writeStatistics() { statistics.add(new CellCoord(getBlackDiscsCount(), getWhiteDiscsCount())); }
+    private void changePlayer() { isCurrentPlayerWhite = !isCurrentPlayerWhite; }
+
 }

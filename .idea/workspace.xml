@@ -2,57 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2761904a-5530-4f3d-b864-b14e905d9aa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model/Strategy/AiStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Views/Components/StatisticsTable.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/AiEasyStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/AiMediumStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/AiStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/AiEasyStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/AiMediumStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/AiStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/IGameBoard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Views/Components/StatisticsPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/IGameBoard.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/IReversiGame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/IReversiGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/Strategy/Node.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Controllers/GameController.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Controllers/GameController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/Cell.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/Cell.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/CellCoord.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/CellCoord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/CellType.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/CellType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/GameBoard.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/GameBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/GameResult.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/GameResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/IGameBoard.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/IGameBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/IGameObserver.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/IGameObserver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/PvAiReversiGame.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/PvAiReversiGame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/PvPReversiGame.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/PvPReversiGame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/ReversiGame.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/ReversiGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/Strategy/AiEasyStrategy.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/Strategy/AiEasyStrategy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Model/Strategy/AiMediumStrategy.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Model/Strategy/AiMediumStrategy.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/BoardPanel.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/BoardPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/CellButton$CellButtonState.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/CellButton$CellButtonState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/CellButton.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/CellButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/CellLabel.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/CellLabel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/PlayerPanel.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/Components/PlayerPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/GameView$CellActionListener.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/GameView$CellActionListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/GameView$CellMouseListener.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/GameView$CellMouseListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/GameView.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/GameView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView$1.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView$2.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView$3.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/MainView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/Views/VisualSettings.class" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/Views/VisualSettings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Reversi_v2/save.ser" afterPath="$PROJECT_DIR$/out/production/Reversi_v2/save.ser" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/save.ser" afterPath="$PROJECT_DIR$/src/save.ser" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/GameController.java" afterPath="$PROJECT_DIR$/src/Controllers/GameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Cell.java" afterPath="$PROJECT_DIR$/src/Model/Cell.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/CellCoord.java" afterPath="$PROJECT_DIR$/src/Model/CellCoord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/CellType.java" afterPath="$PROJECT_DIR$/src/Model/CellType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/GameBoard.java" afterPath="$PROJECT_DIR$/src/Model/GameBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/GameResult.java" afterPath="$PROJECT_DIR$/src/Model/GameResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/IGameObserver.java" afterPath="$PROJECT_DIR$/src/Model/IGameObserver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/PvAiReversiGame.java" afterPath="$PROJECT_DIR$/src/Model/PvAiReversiGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/PvPReversiGame.java" afterPath="$PROJECT_DIR$/src/Model/PvPReversiGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ReversiGame.java" afterPath="$PROJECT_DIR$/src/Model/ReversiGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java" afterPath="$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java" afterPath="$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/Components/BoardPanel.java" afterPath="$PROJECT_DIR$/src/Views/Components/BoardPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/Components/CellButton.java" afterPath="$PROJECT_DIR$/src/Views/Components/CellButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/Components/CellLabel.java" afterPath="$PROJECT_DIR$/src/Views/Components/CellLabel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/Components/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/Views/Components/PlayerPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/GameView.java" afterPath="$PROJECT_DIR$/src/Views/GameView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/MainView.java" afterPath="$PROJECT_DIR$/src/Views/MainView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/VisualSettings.java" afterPath="$PROJECT_DIR$/src/Views/VisualSettings.java" />
@@ -65,42 +44,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Reversi_v2$ReversiMain.coverage" NAME="ReversiMain Coverage Results" MODIFIED="1508706766802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReversiGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/ReversiGame.java">
+      <file leaf-file-name="AiGameView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Views/AiGameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="81" column="34" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+            <state relative-caret-position="119">
+              <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4375#4376#0" expanded="true" />
-                <element signature="e#4459#4460#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/GameBoard.java">
+      <file leaf-file-name="AiMediumStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2243">
-              <caret line="159" column="79" lean-forward="false" selection-start-line="159" selection-start-column="79" selection-end-line="159" selection-end-column="79" />
+            <state relative-caret-position="2006">
+              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
-                <element signature="e#5677#5688#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PvPReversiGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/PvPReversiGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#178#179#0" expanded="true" />
-                <element signature="e#208#209#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,42 +76,8 @@
       <file leaf-file-name="PvAiReversiGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/PvAiReversiGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AiMediumStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#394#395#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Strategy/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AiStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="441">
+              <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AiEasyStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java">
+      <file leaf-file-name="ReversiGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/ReversiGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="815">
+              <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,23 +97,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Cell.java">
+      <file leaf-file-name="GameView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Views/GameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="305">
+              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#showDisksToUpturn#0;class#GameView#0" expanded="false" />
+                <element signature="method#restore#0;class#GameView#0" expanded="false" />
+                <element signature="method#showAvailableMoves#0;class#GameView#0" expanded="false" />
+                <element signature="method#writeStatistics#0;class#GameView#0" expanded="false" />
+                <element signature="method#setPlayer#0;class#GameView#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IReversiGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/IReversiGame.java">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Views/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="186">
+              <caret line="151" column="11" lean-forward="true" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4375#4376#0" expanded="true" />
+                <element signature="e#4421#4422#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -218,35 +160,40 @@
         <option value="$PROJECT_DIR$/src/Views/Components/HorizontalCellLabel.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/StatisticsPanel.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/GameBoardContainer.java" />
-        <option value="$PROJECT_DIR$/src/Model/CellCoord.java" />
         <option value="$PROJECT_DIR$/src/Model/CellType.java" />
         <option value="$PROJECT_DIR$/src/Model/GameResult.java" />
         <option value="$PROJECT_DIR$/src/Model/IAiGame.java" />
-        <option value="$PROJECT_DIR$/src/Model/IGameObserver.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/CellLabel.java" />
-        <option value="$PROJECT_DIR$/src/Model/PvAiReversiGame.java" />
-        <option value="$PROJECT_DIR$/src/Views/MainView.java" />
-        <option value="$PROJECT_DIR$/src/Views/Components/BoardPanel.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/CellButton.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/InfoPanel.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/PlayerPanel.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/StatisticsRenderer.java" />
         <option value="$PROJECT_DIR$/src/Views/Components/StatisticsTable.java" />
-        <option value="$PROJECT_DIR$/src/Views/VisualSettings.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/GameController.java" />
-        <option value="$PROJECT_DIR$/src/Views/GameView.java" />
-        <option value="$PROJECT_DIR$/src/Model/PvPReversiGame.java" />
         <option value="$PROJECT_DIR$/src/Model/AiStrategy.java" />
         <option value="$PROJECT_DIR$/src/Model/AiEasyStrategy.java" />
         <option value="$PROJECT_DIR$/src/Model/AiMediumStrategy.java" />
-        <option value="$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java" />
         <option value="$PROJECT_DIR$/src/Model/Strategy/AiStrategy.java" />
-        <option value="$PROJECT_DIR$/src/Model/Cell.java" />
-        <option value="$PROJECT_DIR$/src/Model/IReversiGame.java" />
         <option value="$PROJECT_DIR$/src/Model/IGameBoard.java" />
+        <option value="$PROJECT_DIR$/src/Model/IReversiGame.java" />
+        <option value="$PROJECT_DIR$/src/Model/Strategy/Node.java" />
         <option value="$PROJECT_DIR$/src/Model/GameBoard.java" />
-        <option value="$PROJECT_DIR$/src/Model/ReversiGame.java" />
+        <option value="$PROJECT_DIR$/src/Model/CellCoord.java" />
+        <option value="$PROJECT_DIR$/src/Model/Cell.java" />
+        <option value="$PROJECT_DIR$/src/Views/Components/BoardPanel.java" />
+        <option value="$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java" />
+        <option value="$PROJECT_DIR$/src/Model/PvPReversiGame.java" />
+        <option value="$PROJECT_DIR$/src/Model/IGameObserver.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/GameController.java" />
+        <option value="$PROJECT_DIR$/src/Views/RulesView.java" />
+        <option value="$PROJECT_DIR$/src/Views/VisualSettings.java" />
+        <option value="$PROJECT_DIR$/src/Views/RulesScreen.java" />
+        <option value="$PROJECT_DIR$/src/rules.txt" />
         <option value="$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java" />
+        <option value="$PROJECT_DIR$/src/Model/PvAiReversiGame.java" />
+        <option value="$PROJECT_DIR$/src/Model/ReversiGame.java" />
+        <option value="$PROJECT_DIR$/src/Views/GameView.java" />
+        <option value="$PROJECT_DIR$/src/Views/AiGameView.java" />
+        <option value="$PROJECT_DIR$/src/Views/MainView.java" />
       </list>
     </option>
   </component>
@@ -288,6 +235,12 @@
               <item name="Reversi_v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Reversi_v2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reversi_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reversi_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,6 +255,13 @@
               <item name="Reversi_v2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reversi_v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reversi_v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -467,12 +427,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33387887" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33387887" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24281392" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -522,55 +483,26 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Views/GameView.java</url>
-          <line>187</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="27" />
+      <option name="time" value="39" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="newGameBoard.getDiscs(false)" language="JAVA" />
+        <watch expression="gameBoard.getDiscs(false)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controllers/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/IGameObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/Components/BoardPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="46" column="79" lean-forward="false" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="79" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -579,8 +511,8 @@
         <state relative-caret-position="187">
           <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,6 +567,11 @@
           <caret line="38" column="45" lean-forward="false" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#showDisksToUpturn#0;class#GameView#0" expanded="false" />
+            <element signature="method#restore#0;class#GameView#0" expanded="false" />
+            <element signature="method#showAvailableMoves#0;class#GameView#0" expanded="false" />
+            <element signature="method#writeStatistics#0;class#GameView#0" expanded="false" />
+            <element signature="method#setPlayer#0;class#GameView#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,7 +588,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -660,8 +599,8 @@
         <state relative-caret-position="187">
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,34 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/IGameObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="51" lean-forward="false" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/CellCoord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/Components/BoardPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/Components/CellButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-935">
@@ -799,50 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/Components/PlayerPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/Components/StatisticsRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/Components/StatisticsTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/VisualSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="151" column="69" lean-forward="false" selection-start-line="151" selection-start-column="69" selection-end-line="151" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="56" column="42" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -857,26 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="68" column="33" lean-forward="true" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="96" column="23" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/CellType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -885,57 +736,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/PvAiReversiGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/PvPReversiGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/IReversiGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -950,45 +754,209 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Strategy/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CellCoord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/Components/StatisticsRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2243">
-          <caret line="159" column="79" lean-forward="false" selection-start-line="159" selection-start-column="79" selection-end-line="159" selection-end-column="79" />
+        <state relative-caret-position="934">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
             <element signature="e#5677#5688#0" expanded="true" />
+            <element signature="method#getCornerDisksCount#0;class#GameBoard#0" expanded="false" />
+            <element signature="method#getCornerAdjacentDisksCount#0;class#GameBoard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/Components/BoardPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="86" column="9" lean-forward="false" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/IReversiGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiEasyStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PvPReversiGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/IGameObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/Components/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="78" column="61" lean-forward="false" selection-start-line="78" selection-start-column="61" selection-end-line="78" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/VisualSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="154" column="65" lean-forward="true" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/RulesScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rules.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/ReversiGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="81" column="34" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+        <state relative-caret-position="815">
+          <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/PvAiReversiGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/GameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#showDisksToUpturn#0;class#GameView#0" expanded="false" />
+            <element signature="method#restore#0;class#GameView#0" expanded="false" />
+            <element signature="method#showAvailableMoves#0;class#GameView#0" expanded="false" />
+            <element signature="method#writeStatistics#0;class#GameView#0" expanded="false" />
+            <element signature="method#setPlayer#0;class#GameView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/AiGameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="151" column="11" lean-forward="true" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4375#4376#0" expanded="true" />
-            <element signature="e#4459#4460#0" expanded="true" />
+            <element signature="e#4421#4422#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Strategy/AiMediumStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Strategy/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
